@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Lobster&family=Pacifico&family=Permanent+Marker&family=Playwrite+IN:wght@100..400&family=Quicksand:wght@300..700&display=swap"
+        rel="stylesheet">
+</head>
+<style>
+    * {
+        margin: 0px;
+        padding: 0px;
+
+    }
+
+    .header table {
+
+        font-family: "Quicksand", serif;
+        width: 100%;
+    }
+
+    th:hover {
+        color: #FFBF00;
+    }
+
+    .playwrite-in {
+        font-family: "Playwrite IN", serif;
+        font-optical-sizing: auto;
+        font-weight: 400;
+        font-style: normal;
+    }
+
+    .places {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        height: 90%;
+
+
+    }
+
+    .places::before {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 90%;
+        background-image: url('background image.jpeg');
+        background-size: cover;
+        background-position: center;
+        opacity: 0.2;
+        z-index: -1;
+    }
+
+    .places .image {
+        padding-top: 150px;
+        padding-right: 80px;
+        width: 700px;
+        height: 500px;
+        opacity: 1;
+
+    }
+
+    .places .texts {
+        display: flex;
+        flex-direction: column;
+        width: 800px;
+        height: 600px;
+
+        padding-top: 20px;
+        padding-left: 20px;
+
+
+
+    }
+
+    .places .texts h1 {
+
+        font-size: 50px;
+
+        font-family: "Playwrite IN", serif;
+    }
+
+
+    .places .texts .imgktm {
+        padding-left: 20px;
+        display: flex;
+        padding-top: 20px;
+        gap: 30px;
+    }
+
+    .places .texts img:hover {
+        transform: scale(1.1);
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    a:hover {
+        color: #FFBF00;
+    }
+    .booking-form {
+          
+            padding: 30px;
+            padding-left:100px;
+            border-radius: 10px;
+            width: 400px;
+        }
+
+        .booking-form h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .booking-form label {
+            font-weight: 500;
+            margin-bottom: 5px;
+            color: #555;
+        }
+
+        .booking-form input,
+        .booking-form select,
+        .booking-form button {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        .booking-form button {
+            background-color: #007bff;
+            color: #fff;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .booking-form button:hover {
+            background-color: #0056b3;
+        }
+</style>
+
+<body>
+    <div class="header">
+        <table>
+            <tr>
+                <th><img src="nepal icon.png" width="200px" </th>
+                <th><a href="http://127.0.0.1:3000/tourism.html"> Home </a></th>
+                <th><a href="http://127.0.0.1:3000/placestogo.html"> Places to go</a></th>
+                <th><a href="http://127.0.0.1:3000/thingstodo.html">Things to do</a></th>
+                <th><a href="http://127.0.0.1:3000/Festivals.html"> Festivals and Events</a></th>
+                <th><a href="http://127.0.0.1:3000/hotelbooking.html"> Plan your Trip</a></th>
+                <th><a href="gallery.html"> Gallery </a></th>
+            </tr>
+        </table>
+    </div>
+    <div class="places">
+
+        <div class="booking-form">
+            <h1>Hotel Booking</h1>
+            <form action="/submit-booking" method="POST">
+                <!-- Guest Name -->
+                <label for="name">Full Name</label>
+                <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+    
+                <!-- Email Address -->
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+    
+                <!-- Phone Number -->
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+    
+                <!-- Check-In Date -->
+                <label for="checkin">Check-In Date</label>
+                <input type="date" id="checkin" name="checkin" required>
+    
+                <!-- Check-Out Date -->
+                <label for="checkout">Check-Out Date</label>
+                <input type="date" id="checkout" name="checkout" required>
+    
+                <!-- Number of Guests -->
+                <label for="guests">Number of Guests</label>
+                <select id="guests" name="guests" required>
+                    <option value="" disabled selected>Select number of guests</option>
+                    <option value="1">1 Guest</option>
+                    <option value="2">2 Guests</option>
+                    <option value="3">3 Guests</option>
+                    <option value="4">4 Guests</option>
+                    <option value="5">5 Guests</option>
+                    <option value="6">6+ Guests</option>
+                </select>
+    
+                <!-- Room Type -->
+                <label for="room">Room Type</label>
+                <select id="room" name="room" required>
+                    <option value="" disabled selected>Select a room type</option>
+                    <option value="single">Single Room</option>
+                    <option value="double">Double Room</option>
+                    <option value="suite">Suite</option>
+                    <option value="deluxe">Deluxe Room</option>
+                </select>
+    
+                <!-- Submit Button -->
+                <button type="submit">Book Now</button>
+            </form>
+        </div>
+
+
+        <div class="image">
+            <img src="nepal map.png" width="700px">
+        </div>
+
+
+    </div>
+</body>
+
+</html>
