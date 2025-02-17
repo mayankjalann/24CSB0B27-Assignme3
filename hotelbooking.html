@@ -11,24 +11,39 @@
         rel="stylesheet">
 </head>
 <style>
+    :root {
+        --header-bg-color: white;
+        --hover-color: #FFBF00;
+        --font-family: "Quicksand", serif;
+        --font-family-playwrite: "Playwrite IN", serif;
+        --font-size-h1: 50px;
+        --font-size-input: 14px;
+        --input-padding: 10px;
+        --form-width: 400px;
+        --gap: 30px;
+        --image-width: 700px;
+        --image-height: 500px;
+        --padding-left: 100px;
+        --padding-right: 80px;
+        --background-opacity: 0.2;
+    }
+
     * {
         margin: 0px;
         padding: 0px;
-
     }
 
     .header table {
-
-        font-family: "Quicksand", serif;
+        font-family: var(--font-family);
         width: 100%;
     }
 
     th:hover {
-        color: #FFBF00;
+        color: var(--hover-color);
     }
 
     .playwrite-in {
-        font-family: "Playwrite IN", serif;
+        font-family: var(--font-family-playwrite);
         font-optical-sizing: auto;
         font-weight: 400;
         font-style: normal;
@@ -38,58 +53,49 @@
         display: flex;
         justify-content: space-between;
         width: 100%;
-        height: 90%;
-
-
+        height: 90vh;
+        position: relative;
     }
 
     .places::before {
         content: '';
         position: absolute;
         width: 100%;
-        height: 90%;
+        height: 100%;
         background-image: url('background image.jpeg');
         background-size: cover;
         background-position: center;
-        opacity: 0.2;
+        opacity: var(--background-opacity);
         z-index: -1;
     }
 
     .places .image {
         padding-top: 150px;
-        padding-right: 80px;
-        width: 700px;
-        height: 500px;
+        padding-right: var(--padding-right);
+        width: var(--image-width);
+        height: var(--image-height);
         opacity: 1;
-
     }
 
     .places .texts {
         display: flex;
         flex-direction: column;
-        width: 800px;
-        height: 600px;
-
+        width: calc(100% - var(--image-width) - var(--padding-left));
+        height: 100%;
         padding-top: 20px;
-        padding-left: 20px;
-
-
-
+        padding-left: var(--padding-left);
     }
 
     .places .texts h1 {
-
-        font-size: 50px;
-
-        font-family: "Playwrite IN", serif;
+        font-size: var(--font-size-h1);
+        font-family: var(--font-family-playwrite);
     }
-
 
     .places .texts .imgktm {
         padding-left: 20px;
         display: flex;
         padding-top: 20px;
-        gap: 30px;
+        gap: var(--gap);
     }
 
     .places .texts img:hover {
@@ -101,58 +107,58 @@
     }
 
     a:hover {
-        color: #FFBF00;
+        color: var(--hover-color);
     }
+
     .booking-form {
-          
-            padding: 30px;
-            padding-left:100px;
-            border-radius: 10px;
-            width: 400px;
-        }
+        padding: 30px;
+        padding-left: var(--padding-left);
+        border-radius: 10px;
+        width: var(--form-width);
+    }
 
-        .booking-form h1 {
-            text-align: center;
-            margin-bottom: 20px;
-            color: #333;
-        }
+    .booking-form h1 {
+        text-align: center;
+        margin-bottom: 20px;
+        color: #333;
+    }
 
-        .booking-form label {
-            font-weight: 500;
-            margin-bottom: 5px;
-            color: #555;
-        }
+    .booking-form label {
+        font-weight: 500;
+        margin-bottom: 5px;
+        color: #555;
+    }
 
-        .booking-form input,
-        .booking-form select,
-        .booking-form button {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 15px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            font-size: 14px;
-        }
+    .booking-form input,
+    .booking-form select,
+    .booking-form button {
+        width: 100%;
+        padding: var(--input-padding);
+        margin-bottom: 15px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        font-size: var(--font-size-input);
+    }
 
-        .booking-form button {
-            background-color: #007bff;
-            color: #fff;
-            font-weight: 600;
-            border: none;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
+    .booking-form button {
+        background-color: #007bff;
+        color: #fff;
+        font-weight: 600;
+        border: none;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
 
-        .booking-form button:hover {
-            background-color: #0056b3;
-        }
+    .booking-form button:hover {
+        background-color: #0056b3;
+    }
 </style>
 
 <body>
     <div class="header">
         <table>
             <tr>
-                 <th><img src="nepal icon.png" width="200px" </th>
+                <th><img src="nepal icon.png" width="200px" /></th>
                 <th><a href="index.html"> Home </a></th>
                 <th><a href="placestogo.html"> Places to go</a></th>
                 <th><a href="thingstodo.html">Things to do</a></th>
@@ -214,11 +220,9 @@
             </form>
         </div>
 
-
         <div class="image">
-            <img src="nepal map.png" width="700px">
+            <img src="nepal map.png" width="700px" />
         </div>
-
 
     </div>
 </body>
