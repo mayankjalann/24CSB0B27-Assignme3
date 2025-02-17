@@ -12,6 +12,20 @@
     <title> Gallery </title>
 </head>
 <style>
+    :root {
+        --header-bg-color: white;
+        --hover-color: #FFBF00;
+        --font-family: "Quicksand", serif;
+        --font-size-h1: 40px;
+        --font-size-p: 30px;
+        --gap: 60px;
+        --image-size: 300px;
+        --padding-top: 40px;
+        --padding-left: 100px;
+        --padding-right: 100px;
+        --content-height: calc(100vh - 80px); /* Adjust content height to account for header */
+    }
+
     body {
         overflow: auto;
     }
@@ -19,18 +33,16 @@
     * {
         margin: 0px;
         padding: 0px;
-
     }
 
     .header {
-        background-color: white;
+        background-color: var(--header-bg-color);
         position: sticky;
         top: 0;
-
     }
 
     .header table {
-        font-family: "Quicksand", serif;
+        font-family: var(--font-family);
         width: 100%;
     }
 
@@ -39,17 +51,17 @@
     }
 
     a:hover {
-        color: #FFBF00;
+        color: var(--hover-color);
     }
 
     th:hover {
-        color: #FFBF00;
+        color: var(--hover-color);
     }
 
     .content {
         display: flex;
         width: 100%;
-        height: 100vh;
+        height: var(--content-height);
         flex-direction: column;
     }
 
@@ -60,23 +72,28 @@
     .content .placestovisit {
         display: flex;
         width: 100%;
-        height: 4000px;
+        height: 100%;
+        flex-direction: column;
+        padding: var(--padding-top) 0;
     }
 
     .content .placestovisit h1 {
-        padding-top:40px;
-        font-size: 40px;
-        text-align:center;
-        font-family: "Quicksand", serif;
+        font-size: var(--font-size-h1);
+        text-align: center;
+        font-family: var(--font-family);
     }
 
     .content .placestovisit .imgktm {
         display: flex;
-        padding-left: 100px;
+        padding-left: var(--padding-left);
         padding-top: 60px;
+        gap: var(--gap);
+    }
 
-        gap: 60px;
-
+    .content .placestovisit img {
+        width: var(--image-size);
+        height: var(--image-size);
+        transition: transform 0.3s ease;
     }
 
     .content .placestovisit img:hover {
@@ -88,12 +105,12 @@
     <div class="header">
         <table>
             <tr>
-                <th><img src="nepal icon.png" width="200px" </th>
+                <th><img src="nepal icon.png" width="200px" /></th>
                 <th><a href="index.html"> Home </a></th>
                 <th><a href="placestogo.html"> Places to go</a></th>
                 <th><a href="thingstodo.html">Things to do</a></th>
                 <th><a href="Festivals.html"> Festivals and Events</a></th>
-               <th><a href="hotelbooking.html"> Plan your Trip</a></th>
+                <th><a href="hotelbooking.html"> Plan your Trip</a></th>
                 <th><a href="gallery.html"> Gallery </a></th>
             </tr>
         </table>
@@ -104,35 +121,33 @@
                 <h1><b> Gallery </b></h1>
 
                 <div class="imgktm">
-                    <a href="#"><img src="Pashupatinath.png" width=300px height=300px></a>
-                    <a href="#"><img src="Thamel.png" width=300px height=300px></a>
-                    <a href="#"><img src="Asan.png" width=300px height=300px></a>
-
-
+                    <a href="#"><img src="Pashupatinath.png" alt="Pashupatinath"></a>
+                    <a href="#"><img src="Thamel.png" alt="Thamel"></a>
+                    <a href="#"><img src="Asan.png" alt="Asan"></a>
                 </div>
                 <div class="imgktm">
-                    <a href="#"><img src="Kathmandu Durbar Square.png" width=300px height=300px></a>
-                    <a href="#"><img src="Swayambhu.png" width=300px height=300px></a>
-                    <a href="#"><img src="Boudhanath.png" width=300px height=300px></a>
+                    <a href="#"><img src="Kathmandu Durbar Square.png" alt="Kathmandu Durbar Square"></a>
+                    <a href="#"><img src="Swayambhu.png" alt="Swayambhu"></a>
+                    <a href="#"><img src="Boudhanath.png" alt="Boudhanath"></a>
                 </div>
                 <div class="imgktm">
-                    <a href="#"><img src="phewalake.png" width=300px height=300px></a>
-                    <a href="#"><img src="setiriver.png" width=300px height=300px></a>
-                    <a href="#"><img src="davisfall.png" width=300px height=300px></a>
-
+                    <a href="#"><img src="phewalake.png" alt="Phewa Lake"></a>
+                    <a href="#"><img src="setiriver.png" alt="Seti River"></a>
+                    <a href="#"><img src="davisfall.png" alt="Davis Fall"></a>
                 </div>
                 <div class="imgktm">
-                    <a href="#"><img src="world peace.png" width=300px height=300px></a>
-                    <a href="#"><img src="old bazzar.png" width=300px height=300px></a>
-                    <a href="#"><img src="mahendra .png" width=300px height=300px></a>
+                    <a href="#"><img src="world peace.png" alt="World Peace"></a>
+                    <a href="#"><img src="old bazzar.png" alt="Old Bazzar"></a>
+                    <a href="#"><img src="mahendra .png" alt="Mahendra"></a>
                 </div>
                 <div class="imgktm">
-                    <a href="#"><img src="ph1.png" width=300px height=300px></a>
-                    <a href="#"><img src="ph2.png" width=300px height=300px></a>
-                    <a href="#"><img src="ph3.png" width=300px height=300px></a>
+                    <a href="#"><img src="ph1.png" alt="Ph1"></a>
+                    <a href="#"><img src="ph2.png" alt="Ph2"></a>
+                    <a href="#"><img src="ph3.png" alt="Ph3"></a>
                 </div>
-
             </div>
         </div>
     </div>
 </body>
+
+</html>
